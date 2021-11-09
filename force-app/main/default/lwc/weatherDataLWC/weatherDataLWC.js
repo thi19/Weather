@@ -62,17 +62,12 @@ export default class WeatherDataLWC extends LightningElement {
     }
  
     get options() {
-        return [
-            { label: 'Rio de Janeiro, RJ', value: 'RiodeJaneiro' },
-            { label: 'Campinas, SP', value: 'Campinas' },  
-            { label: 'Rondon do Pará', value: 'RondondoPara' },
-            { label: 'Aracuaí, MG', value: 'Araçuaí' },      
+        return [ 
+            { label: 'Campinas, SP', value: 'Campinas' },     
             { label: 'Madrid, Spain', value: 'Madri' },   
             { label: 'New York, NY', value: 'NewYork' },
             { label: 'Sao Paulo, SP', value: 'SaoPaulo' },
-            { label: 'Lisboa, Portugal', value: 'Lisboa' }, 
-            { label: 'Caraguatatuba, SP', value: 'Caraguatatuba' },
-            { label: 'Fortaleza, CE', value: 'Fortaleza' },
+            { label: 'Lisboa, Portugal', value: 'Lisboa' },  
         ];     
     }   
  

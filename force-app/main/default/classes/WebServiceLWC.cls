@@ -1,6 +1,6 @@
 /**
  * @description       : 
- * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+ * @author            : Thiago Barbosa 
  * @group             : 
  * @last modified on  : 11-09-2021
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
