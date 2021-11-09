@@ -14,6 +14,7 @@ export default class WeatherDataLWC extends LightningElement {
     @track value;
  
     connectedCallback() {
+        this.isLoading = true;
         performCallout({location: 'Denver,CO'}).then(data => {
             this.mapMarkers = [{
                 location: {
@@ -23,6 +24,7 @@ export default class WeatherDataLWC extends LightningElement {
                 title: data['cityName'] + ', ' + data['state'],
             }];
             this.result = data;
+            this.isLoading = false; 
         }).catch(err => console.log(err));
         loadStyle(this, weather).then(result => {
             console.log('what is the result?' , result);
@@ -39,8 +41,8 @@ export default class WeatherDataLWC extends LightningElement {
  
     get getConvertedTemp() {
         if (this.result) {
-            return Math.round((this.result.cityTemp * (9/5)) + 32) + ' deg';
-        } else {
+            return Math.round((this.result.cityTemp)) + ' °C';
+        } else { 
             return '--'
         }
     }
@@ -58,7 +60,7 @@ export default class WeatherDataLWC extends LightningElement {
             return this.result.cityPrecip + " inches"
         } else {
             return '--'
-        }
+        } 
     }
  
     get options() {
@@ -67,12 +69,17 @@ export default class WeatherDataLWC extends LightningElement {
             { label: 'Madrid, Spain', value: 'Madri' },   
             { label: 'New York, NY', value: 'NewYork' },
             { label: 'Sao Paulo, SP', value: 'SaoPaulo' },
-            { label: 'Lisboa, Portugal', value: 'Lisboa' },  
-        ];     
+            { label: 'Lisboa, Portugal', value: 'Lisboa' }, 
+            { label: 'Alicante, Spain', value: 'Alicante' },   
+            { label: 'Danbury, Connecticut', value: 'Danbury' },   
+            { label: 'Chicago, Illinois', value: 'Chicago' },
+            { label: 'Paris, France', value: 'Paris' }             
+        ];       
     }   
  
     handleChange(event) { 
         this.value = event.detail.value;
+        this.isLoading = true;
         performCallout({location: this.value}).then(data => {
             this.mapMarkers = [{
                 location: {
@@ -82,6 +89,7 @@ export default class WeatherDataLWC extends LightningElement {
                 title: data['cityName'] + ', ' + data['state'],
             }]; 
             this.result = data; 
+            this.isLoading = false; 
         }).catch(err => console.log(err));
     }
 } 

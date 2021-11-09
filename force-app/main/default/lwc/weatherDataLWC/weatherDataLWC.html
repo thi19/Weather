@@ -6,6 +6,11 @@
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 --> 
 <template>
+    <template if:true={isLoading}>
+        <div class="slds-p-around_x-large">
+            <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+        </div> 
+    </template>
     <lightning-card title={getCityName}>
         <lightning-layout>
             <lightning-layout-item size="6" medium-device-size="4" padding="around-small">
