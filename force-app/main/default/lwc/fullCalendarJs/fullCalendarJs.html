@@ -66,7 +66,23 @@
               <h2 class="slds-text-heading_medium slds-hyphenate">Criar Evento/ Create Event</h2>
             </header>
             <div class="slds-modal__content slds-p-around_medium">
-              Formulário de Evento Aqui(Event Form Here)
+              <lightning-record-edit-form  object-api-name="Event" 
+              onsuccess={handleSuccess} onsubmit ={handleSubmit}>  
+          <lightning-messages>
+          </lightning-messages>
+          <lightning-output-field field-name="Description">
+          </lightning-output-field>
+          <lightning-input-field field-name="WhoId">
+          </lightning-input-field>
+          <lightning-input-field field-name="Email">
+          </lightning-input-field>
+          <lightning-input-field field-name="Phone">
+          </lightning-input-field>
+          <lightning-input-field field-name="WhatId"> 
+          </lightning-input-field>
+          <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update">
+          </lightning-button>
+      </lightning-record-edit-form>
             </div>
             <footer class="slds-modal__footer">
               <lightning-button label="Cancel" title="Cancel" onclick={createCancel} class="slds-m-right_small"></lightning-button>

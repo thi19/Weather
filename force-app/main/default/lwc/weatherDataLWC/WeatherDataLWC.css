@@ -7,6 +7,9 @@
     font-weight: 500;
     border-radius: 25px;
 }
+.my-card { 
+    display: block;
+} 
  
 .color-grey {
     background-color: grey;

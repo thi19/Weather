@@ -15,46 +15,62 @@
         <lightning-layout>
             <lightning-layout-item size="6" medium-device-size="4" padding="around-small">
                 <lightning-combobox name="cities"
-                    label="Cidades" 
+                    label="Cidades/Cities" 
                     value={value}
-                    placeholder="--Selecione as Cidades--"
+                    placeholder="--Selecione as Cidades(Select Cities)--"
                     options={options}
                     onchange={handleChange} >
                 </lightning-combobox>
             </lightning-layout-item>
         </lightning-layout>
-        <lightning-layout>
-                <lightning-layout-item size="3" medium-device-size="4" padding="around-small">
-                    <lightning-card icon-name="standard:topic" title="Temperatura Atual">
-                        <div class="slds-align_absolute-center color-blue">
-                            <template if:true={result}>
-                                {getConvertedTemp}
+        <lightning-layout multiple-rows> 
+                <lightning-layout-item size="6.5" medium-device-size="4" padding="around-small">
+                    <lightning-card icon-name="standard:topic" title="Temperatura Atual/ Current Temperature">
+                        <div class="slds-align_absolute-center color-blue">  
+                            <template if:true={result}> 
+                                {getConvertedTemp} 
                             </template>
                         </div>
                     </lightning-card>
                 </lightning-layout-item>
-                <lightning-layout-item size="3" medium-device-size="4" padding="around-small">
-                    <lightning-card icon-name="utility:flow" title="Velocidade do vento atual">
+                <lightning-layout-item size="6.5" medium-device-size="4" padding="around-small">
+                    <lightning-card icon-name="utility:flow" title="Velocidade do vento atual/ Current Wind Speed">
                         <div class="slds-align_absolute-center color-grey">
                             <template if:true={result}>
                                 {getCurrentWindSpeed}
                             </template>
                         </div>
                     </lightning-card>
-                </lightning-layout-item>
-                <lightning-layout-item size="3" medium-device-size="4" padding="around-small">
-                    <lightning-card icon-name="standard:calibration" title="Precipitação">
+                </lightning-layout-item> 
+                <lightning-layout-item size="6.5" medium-device-size="4" padding="around-small">
+                    <lightning-card icon-name="standard:calibration" title="Precipitação / Precipitation">
                         <div class="slds-align_absolute-center color-green"> 
-                            <template if:true={result}>
+                            <template if:true={result}> 
                                 {getCurrentPrecip}
                             </template>
                         </div>
                     </lightning-card>
                 </lightning-layout-item>
             </lightning-layout>
-        <lightning-map
-            map-markers={mapMarkers}
-            zoom-level={zoomLevel}>
-        </lightning-map>
+    <lightning-card title="Localização Atual(Current Local)" class="my-card">
+         
+ 
+        <article class="slds-card"> 
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                </div>
+                <div class="slds-media__body">
+                    <div class="slds-box">
+                        <lightning-map 
+                            map-markers={mapMarkers}
+                            zoom-level={zoomLevel}>
+                        </lightning-map>
+                    </div>
+                </div>
+              </header>
+            </div>
+          </article>
+    </lightning-card>
     </lightning-card>
 </template> 

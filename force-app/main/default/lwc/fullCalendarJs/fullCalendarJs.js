@@ -6,7 +6,7 @@
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 
-import { LightningElement, track } from 'lwc';
+import { LightningElement, track, api } from 'lwc';
 import { loadScript, loadStyle } from 'lightning/platformResourceLoader';
 import FullCalendarJS from '@salesforce/resourceUrl/FullCalendarJS';
 import { NavigationMixin } from 'lightning/navigation';
@@ -17,10 +17,17 @@ import fetchAllEvents from '@salesforce/apex/FullCalendarService.fetchAllEvents'
  */
 export default class FullCalendarJs extends NavigationMixin(LightningElement) {
 
-  fullCalendarJsInitialised = false;
+  fullCalendarJsInitialised = false; 
   @track allEvents = [];
   @track selectedEvent = undefined;
   createRecord = false;
+
+    handleSubmit(event) {
+        console.log('onsubmit event recordEditForm'+ event.detail.fields);
+    }
+    handleSuccess(event) {
+        console.log('onsuccess event recordEditForm', event.detail.id);
+    } 
 
   /**
    * @description Standard lifecyle method 'renderedCallback'

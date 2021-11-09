@@ -32,8 +32,8 @@ export default class WeatherDataLWC extends LightningElement {
     }
  
     get getCityName() {
-        if (this.result) {
-            return 'Cidade Informada : ' + this.result.cityName;
+        if (this.result) { 
+            return 'Cidade Informada/ Information of the City : ' + this.result.cityName;
         } else {   
             return '---'
         }
