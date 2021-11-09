@@ -1,0 +1,55 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-09-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title={getCityName}>
+        <lightning-layout>
+            <lightning-layout-item size="6" medium-device-size="4" padding="around-small">
+                <lightning-combobox name="cities"
+                    label="Cidades" 
+                    value={value}
+                    placeholder="--Selecione as Cidades--"
+                    options={options}
+                    onchange={handleChange} >
+                </lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+                <lightning-layout-item size="3" medium-device-size="4" padding="around-small">
+                    <lightning-card icon-name="standard:topic" title="Temperatura Atual">
+                        <div class="slds-align_absolute-center color-blue">
+                            <template if:true={result}>
+                                {getConvertedTemp}
+                            </template>
+                        </div>
+                    </lightning-card>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" medium-device-size="4" padding="around-small">
+                    <lightning-card icon-name="utility:flow" title="Velocidade do vento atual">
+                        <div class="slds-align_absolute-center color-grey">
+                            <template if:true={result}>
+                                {getCurrentWindSpeed}
+                            </template>
+                        </div>
+                    </lightning-card>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" medium-device-size="4" padding="around-small">
+                    <lightning-card icon-name="standard:calibration" title="Precipitação">
+                        <div class="slds-align_absolute-center color-green"> 
+                            <template if:true={result}>
+                                {getCurrentPrecip}
+                            </template>
+                        </div>
+                    </lightning-card>
+                </lightning-layout-item>
+            </lightning-layout>
+        <lightning-map
+            map-markers={mapMarkers}
+            zoom-level={zoomLevel}>
+        </lightning-map>
+    </lightning-card>
+</template> 
