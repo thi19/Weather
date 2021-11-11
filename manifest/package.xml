@@ -3,7 +3,7 @@
     <types>
         <members>FullCalendarService</members>
         <name>ApexClass</name>
-    </types>   
+    </types>     
     <types> 
         <members>fullCalendarJs</members>
         <name>LightningComponentBundle</name>

@@ -9,7 +9,7 @@
 public with sharing class FullCalendarService {
 
     @AuraEnabled
-    public static List<Event> fetchAllEvents(){
+    public static List<Event> fetchAllEvents(){ 
         List<Event> eventList = new List<Event>();
         eventList = [SELECT  Id, Subject, WhatId, WhoId, 
                     Description, EndDate, EndDateTime, OwnerId,
