@@ -15,9 +15,9 @@ export default class WeatherDataLWC extends LightningElement {
  
     connectedCallback() {
         this.isLoading = true;
-        performCallout({location: 'Denver,CO'}).then(data => {
+        performCallout({location: 'SaoPaulo'}).then(data => {
             this.mapMarkers = [{
-                location: {
+                location: { 
                     Latitude: data['cityLat'],
                     Longitude: data['cityLong']
                 },
@@ -33,8 +33,8 @@ export default class WeatherDataLWC extends LightningElement {
  
     get getCityName() {
         if (this.result) { 
-            return 'Cidade Informada/ Information of the City : ' + this.result.cityName;
-        } else {   
+            return 'Cidade Informada/ Information of the City / : ' + this.result.cityName;
+        } else {    
             return '---'
         }
     }
@@ -68,7 +68,7 @@ export default class WeatherDataLWC extends LightningElement {
             { label: 'Campinas, SP', value: 'Campinas' },     
             { label: 'Madrid, Spain', value: 'Madri' },   
             { label: 'New York, NY', value: 'NewYork' },
-            { label: 'Sao Paulo, SP', value: 'SaoPaulo' },
+            { label: 'São Paulo, SP', value: 'SaoPaulo' }, 
             { label: 'Lisboa, Portugal', value: 'Lisboa' }, 
             { label: 'Alicante, Spain', value: 'Alicante' },   
             { label: 'Danbury, Connecticut', value: 'Danbury' },   
