@@ -171,7 +171,7 @@ export default class FullCalendarJs extends NavigationMixin( LightningElement ) 
       this.showToastMessage( 'Error', 'Please, filled the field', 'Error' );
       return; 
     } 
-    this.isLoading = true;  
+    this.isLoading = true;   
     getCreatedEvents( { location: this.strLocation, description: this.strDescription } )
       .then( result => { 
         if ( result ) {  

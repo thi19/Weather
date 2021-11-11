@@ -2,7 +2,7 @@
 function initThemeChooser(settings) { 
   var isInitialized = false;
   var currentThemeSystem; // don't set this directly. use setThemeSystem
-  var currentStylesheetEl;
+  var currentStylesheetEl; 
   var loadingEl = document.getElementById('loading');
   var systemSelectEl = document.querySelector('#theme-system-selector select');
   var themeSelectWrapEls = Array.prototype.slice.call( // convert to real array
