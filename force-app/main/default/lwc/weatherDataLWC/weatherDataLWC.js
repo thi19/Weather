@@ -23,7 +23,7 @@ export default class WeatherDataLWC extends LightningElement {
                 },
                 title: data['cityName'] + ', ' + data['state'],
             }];
-            this.result = data;
+            this.result = data; 
             this.isLoading = false; 
         }).catch(err => console.log(err));
         loadStyle(this, weather).then(result => {
